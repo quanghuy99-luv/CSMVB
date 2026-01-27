@@ -13,22 +13,6 @@ function isAdmin() {
     return isLoggedIn() && $_SESSION['role'] === 'admin';
 }
 
-function isCustomer() {
-    return isLoggedIn() && $_SESSION['role'] === 'customer';
-}
-
-function isStaff() {
-    return isLoggedIn() && $_SESSION['role'] === 'staff';
-}
-
-// Nếu chưa đăng nhập thì quay về trang đăng nhập
-function requireLogin($redirectTo = '/CSMVB/admin/login.php') {
-    if (!isLoggedIn()) {
-        header('Location: ' . $redirectTo);
-        exit();
-    }
-}
-
 function requireAdmin($redirectTo = '/CSMVB/admin/login.php') {
     if (!isAdmin()) {
         header('Location: ' . $redirectTo);
