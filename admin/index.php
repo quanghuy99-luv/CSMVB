@@ -220,7 +220,7 @@ try {
                                         <td><?php echo htmlspecialchars($booking['phone']); ?></td>
                                         <td><?php echo htmlspecialchars($booking['email']); ?></td>
                                         <td><?php echo htmlspecialchars($booking['service_name']); ?></td>
-                                        <td><?php echo htmlspecialchars($booking['service_price']); ?> VNĐ</td>
+                                        <td><?php echo htmlspecialchars($booking['service_price']); ?></td>
                                         <td>
                                             <select style="border: 2px solid red;" onchange="updateStatus(<?php echo $booking['id']; ?>, this.value)" class="form-select form-select-sm w-auto">
                                                 <option value="pending" <?php echo $booking['status'] === 'pending' ? 'selected' : ''; ?>>Chờ xác nhận</option>
@@ -302,7 +302,7 @@ try {
                 </div>
                 <div class="mb-3">
                     <label class="form-label fw-bold">Giá dịch vụ:</label>
-                    <input type="text" class="form-control" readonly value="${Number(booking.service_price).toLocaleString('vi-VN')} VNĐ">
+                    <input type="text" class="form-control" readonly value="${booking.service_price}">
                 </div>
                 <div class="mb-3">
                     <label class="form-label fw-bold">Ghi chú:</label>
